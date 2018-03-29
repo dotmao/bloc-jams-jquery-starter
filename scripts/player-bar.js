@@ -1,8 +1,8 @@
 {
   //adding click handler that targets play-pause button and call play.playPause() function in pla.js
   $('button#play-pause').on('click', function() {
-    // player.playPause();
-//adding  `playState` attribute to play/pause button then it will trigger css to react accordingly
+    player.playPause();
+//  adding  `playState` attribute to play/pause button then it will trigger css to react accordingly
   $(this).attr('playState', player.playerState);
   });
 
@@ -18,18 +18,18 @@
 
   const nextSong = album.songs[nextSongIndex];
   //apply playPause button to the nextSong
-  // player.playPause(nextSong);
+  player.playPause(nextSong);
+});
 
   $('button#previous').on('click', function() {
     if(player.playState !== 'playing') { return; };
+    //we need to define currentSongIndex here again since it is not defined in this block
+    const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
     const previousSongIndex =currentSongIndex - 1;
 
     if (previousSongIndex < 0) { return; }
     const previousSong = album.songs[previousSongIndex];
-    // player.playPause(previousSong);
-  })
-
-
-  })
+    player.playPause(previousSong);
+  });
 
 }
