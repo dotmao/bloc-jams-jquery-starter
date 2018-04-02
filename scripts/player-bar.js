@@ -3,7 +3,7 @@
   $('button#play-pause').on('click', function() {
     player.playPause();
 //  adding  `playState` attribute to play/pause button then it will trigger css to react accordingly
-  $(this).attr('playState', player.playerState);
+  $(this).attr('playState', player.playState);
   });
 
   $('button#next').on('click', function() {
@@ -25,11 +25,35 @@
     if(player.playState !== 'playing') { return; };
     //we need to define currentSongIndex here again since it is not defined in this block
     const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
-    const previousSongIndex =currentSongIndex - 1;
+    const previousSongIndex = currentSongIndex - 1;
 
     if (previousSongIndex < 0) { return; }
     const previousSong = album.songs[previousSongIndex];
     player.playPause(previousSong);
   });
+
+  $('#time-control input').on('input', function (event) {
+    player.skipTo(event.target.value);
+  });
+
+  $('#volume-control input').on('input', function (event) {
+    player.setVolume(event.target.value);
+  });
+
+  setInterval ( () => {
+// if the song is not the currentlyPlaying song get out of the function
+   if (player.playState !== 'playing') { return; }
+   const currentTime = player.getTime();
+   const duration = player.getDuration();
+   const percent = (currentTime / duration) * 100;
+
+// time-control is a class from <section>, current-time is an id under time-control
+   $('#time-control .current-time').text(currentTime);
+   $('#time-control input').val(percent);
+   $('#volume-control input').val();
+   $('#time-control .total-time').text(duration);
+   // val(); jQuery method is accessing input value of form elements
+   // 1000 is the the number of milliseconds between intervals. The callback function will execute once every second.
+  }, 1000);
 
 }

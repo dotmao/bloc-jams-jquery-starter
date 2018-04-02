@@ -16,7 +16,7 @@
          <td>${song.duration}</td>
         </tr>
       `);
-      console.log(song);
+  
 
       song.element.on('click', event => {
         player.playPause(song);

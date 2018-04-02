@@ -13,6 +13,7 @@ class Player {
 
   getTime() {
     return this.soundObject.getTime();
+  
   }
 
   playPause (song = this.currentlyPlaying) {
