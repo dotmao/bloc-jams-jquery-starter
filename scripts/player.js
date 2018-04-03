@@ -4,7 +4,7 @@ class Player {
     this.playState = 'stopped';
     this.volume = 80;
     this.soundObject = new buzz.sound(this.currentlyPlaying.soundFileUrl);
-    debugger
+
   } //sets initial sets of player's properties.
 
   getDuration() {
@@ -13,7 +13,6 @@ class Player {
 
   getTime() {
     return this.soundObject.getTime();
-  
   }
 
   playPause (song = this.currentlyPlaying) {

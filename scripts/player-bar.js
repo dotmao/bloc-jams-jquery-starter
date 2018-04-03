@@ -1,6 +1,8 @@
 {
   //adding click handler that targets play-pause button and call play.playPause() function in pla.js
   $('button#play-pause').on('click', function() {
+    console.log($('button#play-pause'));
+    debugger;
     player.playPause();
 //  adding  `playState` attribute to play/pause button then it will trigger css to react accordingly
   $(this).attr('playState', player.playState);
@@ -51,7 +53,7 @@
    $('#time-control .current-time').text(currentTime);
    $('#time-control input').val(percent);
    $('#volume-control input').val();
-   $('#time-control .total-time').text(duration);
+   // $('#time-control .total-time').text(duration);
    // val(); jQuery method is accessing input value of form elements
    // 1000 is the the number of milliseconds between intervals. The callback function will execute once every second.
   }, 1000);
