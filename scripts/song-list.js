@@ -16,11 +16,10 @@
          <td>${song.duration}</td>
         </tr>
       `);
-  
+
 
       song.element.on('click', event => {
-        player.playPause(song);
-
+        helper.playPauseAndUpdate(song);
     //syncing the play button on both play bar and icon in front of the song.
         $('button#play-pause').attr('playState', player.playState);
       })

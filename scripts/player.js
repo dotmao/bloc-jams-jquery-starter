@@ -1,5 +1,6 @@
 class Player {
   constructor () {
+    debugger;
     this.currentlyPlaying = album.songs[0];
     this.playState = 'stopped';
     this.volume = 80;

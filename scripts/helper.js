@@ -1,7 +1,7 @@
 // it defines Helper class then instantiates it and stores the instance in a const.
 class Helper {
   playPauseAndUpdate (song) {
-    player.playPause();
+    player.playPause(song);
     const duration = player.getDuration();
     $('#time-control .total-time').text(duration);
   }
