@@ -1,8 +1,6 @@
 {
   //adding click handler that targets play-pause button and call play.playPause() function in pla.js
   $('button#play-pause').on('click', function() {
-    console.log($('button#play-pause'));
-    debugger;
     // player.playPause();
     helper.playPauseAndUpdate();
 //  adding  `playState` attribute to play/pause button then it will trigger css to react accordingly
@@ -51,7 +49,10 @@
    const currentTime = player.getTime();
    const duration = player.getDuration();
    const percent = (currentTime / duration) * 100;
-
+   // const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
+   // const currentSong = album.songs[currentSongIndex];
+   // helper.playPauseAndUpdate.currentSong
+   // console.log(currentSong);
 // time-control is a class from <section>, current-time is an id under time-control
    $('#time-control .current-time').text(currentTime);
    $('#time-control input').val(percent);
