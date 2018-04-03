@@ -3,7 +3,8 @@
   $('button#play-pause').on('click', function() {
     console.log($('button#play-pause'));
     debugger;
-    player.playPause();
+    // player.playPause();
+    helper.playPauseAndUpdate();
 //  adding  `playState` attribute to play/pause button then it will trigger css to react accordingly
   $(this).attr('playState', player.playState);
   });
@@ -20,7 +21,8 @@
 
   const nextSong = album.songs[nextSongIndex];
   //apply playPause button to the nextSong
-  player.playPause(nextSong);
+  // player.playPause(nextSong);
+  helper.playPauseAndUpdate(nextSong);
 });
 
   $('button#previous').on('click', function() {
@@ -31,7 +33,8 @@
 
     if (previousSongIndex < 0) { return; }
     const previousSong = album.songs[previousSongIndex];
-    player.playPause(previousSong);
+    // player.playPause(previousSong);
+    helper.playPauseAndUpdate(previousSong);
   });
 
   $('#time-control input').on('input', function (event) {
