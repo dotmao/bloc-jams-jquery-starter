@@ -13,7 +13,7 @@
            </button>
          </td>
          <td>${song.title}</td>
-         <td>${song.duration}</td>
+         <td>${helper.prettyTime(song.duration)}</td>
         </tr>
       `);
 

@@ -49,12 +49,9 @@
    const currentTime = player.getTime();
    const duration = player.getDuration();
    const percent = (currentTime / duration) * 100;
-   // const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
-   // const currentSong = album.songs[currentSongIndex];
-   // helper.playPauseAndUpdate.currentSong
-   // console.log(currentSong);
 // time-control is a class from <section>, current-time is an id under time-control
-   $('#time-control .current-time').text(currentTime);
+   // $('#time-control .current-time').text(currentTime);
+   $('#time-control .current-time').text(helper.prettyTime(currentTime));
    $('#time-control input').val(percent);
    $('#volume-control input').val();
    // $('#time-control .total-time').text(duration);
