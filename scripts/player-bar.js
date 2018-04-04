@@ -31,8 +31,8 @@
 
     if (previousSongIndex < 0) { return; }
     const previousSong = album.songs[previousSongIndex];
-    player.playPause(previousSong);
-    // helper.playPauseAndUpdate(previousSong);
+    // player.playPause(previousSong);
+    helper.playPauseAndUpdate(previousSong);
   });
 
   $('#time-control input').on('input', function (event) {
