@@ -1,10 +1,9 @@
 // it defines Helper class then instantiates it and stores the instance in a const.
 class Helper {
     prettyTime(timeInSeconds){
-      const duration = player.currentlyPlaying.duration;
-      const min = math.floor( timeInSeconds / 60 );
-      const sec = math.floor( timeInSeconds - min * 60);
-       return `${min}:${sec}`;
+      const min = Math.floor( timeInSeconds / 60 );
+      const sec = Math.floor( timeInSeconds - min * 60);
+      return `${min}:${sec}`;
     }
 
   playPauseAndUpdate (song) {
